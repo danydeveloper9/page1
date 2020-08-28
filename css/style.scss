@@ -1,0 +1,142 @@
+/*------------------------------
+  Ajustes Generales
+------------------------------*/
+$blue : #b6ffea;
+$meat : #fce2ae;
+$pink : #ffb3b3;
+$pastel: #ffdcf7;
+
+.bg-primary{
+  background-color: $pink !important;
+}
+
+button:hover, button:focus, a{
+  outline: 0;
+}
+*::selection{
+  background: darken($pink, 5%);
+  color: white;
+}
+
+
+/*------------------------------
+  1. NAVBAR
+------------------------------*/
+.nav-item{
+  position: relative;
+  border-radius: 1rem;
+  padding: 0.3rem 1rem;
+  transition: all 0.5s ease;
+}
+.nav-item a::after{
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f138";
+  font-size: 1rem;
+  position: absolute;
+  right: 1rem;
+  transition: all 0.5s ease;
+}
+.nav-item:focus{
+  border: 0.3rem solid darken($pink, 10%);
+  background-color: $pastel;
+  transition: all 0.5s ease;
+}
+.nav-item:focus a::after{
+  color: darken($pink, 10%);
+  transform: rotate(-180deg);
+  transition: all 0.5s ease;
+}
+
+
+
+/*------------------------------
+  2. BANNER
+------------------------------*/
+#banner{
+  position: relative;
+  top: 3.5rem;
+  height: 90vh;
+  background-image: url("../images/cupcakes-sm.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+#banner::after{
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: $meat;
+  opacity: 0.6;
+  z-index: 1;
+}
+#banner .container{
+  position: relative;
+  z-index: 2;
+}
+#banner a{
+  color: darken($pink, 20%);
+  transition: all 0.5s ease;
+}
+#banner a:hover{
+  color: rgba(1, 1, 1, 0.5);
+  transition: all 0.5s ease;
+}
+
+
+
+/*------------------------------
+  MEDIA QUERIES
+------------------------------*/
+@media screen and (max-width: 767px){
+
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+  #banner{
+    background-image: url("../images/cupcakes-md.jpg");
+  }
+}
+@media screen and (min-width: 1024px){
+  //NAVBAR
+  .nav-item a::after{
+    content: " ";
+  }
+  #navbarToggler{
+    justify-content: end;
+  }
+  .navbar-nav{
+    position: absolute;
+  }
+  .nav-item{
+    height: 4rem;
+    display: flex;
+  }
+  .nav-item a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .nav-item a::before{
+    transition: all 0.5s ease;
+  }
+  .nav-item:hover a::before{
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 200%;
+    top: -40%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $pastel;
+    transition: all 0.5s ease;
+  }
+  //BANNER
+  #banner{
+    background-image: url("../images/cupcakes-lg.jpg");
+  }
+}

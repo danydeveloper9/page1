@@ -2,7 +2,34 @@
   Ajustes Generales
 ------------------------------*/
 .bg-primary {
+  background-color: #fce2ae !important; }
+
+.bg-secondary {
   background-color: #ffb3b3 !important; }
+
+.bg-info {
+  background-color: #ffdcf7 !important; }
+
+.bg-success {
+  background-color: #b6ffea !important; }
+
+.text-primary {
+  color: #fce2ae !important; }
+
+.text-secondary {
+  color: #ffb3b3 !important; }
+
+.text-info {
+  color: #ffdcf7 !important; }
+
+.text-success {
+  color: #b6ffea !important; }
+
+.border-secondary {
+  border-color: #ffb3b3 !important; }
+
+.border-success {
+  border-color: #b6ffea !important; }
 
 button:hover, button:focus, a {
   outline: 0; }
@@ -15,46 +42,59 @@ button:hover, button:focus, a {
   background: #ff9a9a;
   color: white; }
 
-/*------------------------------
-  1. NAVBAR
-------------------------------*/
-.nav-item {
-  position: relative;
-  border-radius: 1rem;
-  padding: 0.3rem 1rem;
+#social a {
+  color: #ffb3b3;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
-.nav-item a::after {
+#social a:hover {
+  color: #ff8080;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+/*------------------------------
+  1. NAVBAR
+------------------------------*/
+.nav-link {
+  position: relative;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem !important;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+.nav-link::after {
+  position: absolute;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f138";
   font-size: 1rem;
-  position: absolute;
-  right: 1rem;
+  right: 1.5rem;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
-.nav-item:focus {
-  border: 0.3rem solid #ff8080;
-  background-color: #ffdcf7;
+.nav-link:hover {
+  background-color: #ffc3f1;
+  border: 5px solid #ff8080;
+  border-radius: 1rem;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
-.nav-item:focus a::after {
+.nav-link:hover::after {
+  -webkit-transform: translateX(0.3rem) rotate(-180deg);
+          transform: translateX(0.3rem) rotate(-180deg);
   color: #ff8080;
-  -webkit-transform: rotate(-180deg);
-          transform: rotate(-180deg);
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
+
+.active {
+  background-color: #ffdcf7; }
 
 /*------------------------------
   2. BANNER
 ------------------------------*/
 #banner {
   position: relative;
-  top: 3.5rem;
-  height: 90vh;
+  height: 100vh;
   background-image: url("../images/cupcakes-sm.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -75,15 +115,32 @@ button:hover, button:focus, a {
   position: relative;
   z-index: 2; }
 
-#banner a {
-  color: #ff4d4d;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+#col-swiper {
+  position: relative;
+  height: 100%; }
 
-#banner a:hover {
-  color: rgba(1, 1, 1, 0.5);
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+.swiper-container {
+  width: 100%;
+  height: 100%; }
+
+.swiper-slide {
+  height: 300px;
+  text-align: center;
+  font-size: 18px;
+  background: #ffdcf7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #fad07d; }
 
 /*------------------------------
   MEDIA QUERIES
@@ -92,51 +149,34 @@ button:hover, button:focus, a {
   #banner {
     background-image: url("../images/cupcakes-md.jpg"); } }
 @media screen and (min-width: 1024px) {
-  .nav-item a::after {
-    content: " "; }
-
-  #navbarToggler {
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: end; }
-
-  .navbar-nav {
-    position: absolute; }
+  .nav-link::after {
+    content: ""; }
 
   .nav-item {
-    height: 4rem;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex; }
+    height: 2.5rem; }
 
-  .nav-item a {
-    height: 100%;
+  .nav-link {
+    height: 4.5rem;
+    top: -1rem;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center; }
+    border-radius: 0; }
 
-  .nav-item a::before {
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
+  .nav-link:hover {
+    border-radius: 0;
+    border: 0; }
 
-  .nav-item:hover a::before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 200%;
-    top: -40%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #ffdcf7;
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease; }
+  .navbar-expand-lg .navbar-collapse {
+    display: grid !important; }
 
   #banner {
-    background-image: url("../images/cupcakes-lg.jpg"); } }
+    background-image: url("../images/cupcakes-lg.jpg"); }
+
+  .swiper-slide {
+    height: 400px; } }
 
 /*# sourceMappingURL=style.css.map */

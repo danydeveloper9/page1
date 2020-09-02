@@ -7,7 +7,34 @@ $pink : #ffb3b3;
 $pastel: #ffdcf7;
 
 .bg-primary{
+  background-color: $meat !important;
+}
+.bg-secondary{
   background-color: $pink !important;
+}
+.bg-info{
+  background-color: $pastel !important;
+}
+.bg-success{
+  background-color: $blue !important;
+}
+.text-primary{
+  color: $meat !important;
+}
+.text-secondary{
+  color: $pink !important;
+}
+.text-info{
+  color: $pastel !important;
+}
+.text-success{
+  color: $blue !important;
+}
+.border-secondary{
+  border-color: $pink !important;
+}
+.border-success{
+  border-color: $blue !important;
 }
 
 button:hover, button:focus, a{
@@ -19,33 +46,49 @@ button:hover, button:focus, a{
 }
 
 
+
+#social a{
+  color: $pink;
+  transition: all 0.5s ease;
+}
+#social a:hover{
+  color: darken($pink, 10%);
+  transition: all 0.5s ease;
+}
+
+
+
 /*------------------------------
   1. NAVBAR
 ------------------------------*/
-.nav-item{
+.nav-link{
   position: relative;
   border-radius: 1rem;
-  padding: 0.3rem 1rem;
+  padding: 0.5rem 1rem !important;
   transition: all 0.5s ease;
 }
-.nav-item a::after{
+.nav-link::after{
+  position: absolute;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f138";
   font-size: 1rem;
-  position: absolute;
-  right: 1rem;
+  right: 1.5rem;
   transition: all 0.5s ease;
 }
-.nav-item:focus{
-  border: 0.3rem solid darken($pink, 10%);
-  background-color: $pastel;
+.nav-link:hover{
+  background-color: darken($pastel, 5%);
+  border: 5px solid darken($pink, 10%);
+  border-radius: 1rem;
   transition: all 0.5s ease;
 }
-.nav-item:focus a::after{
+.nav-link:hover::after{
+  transform: translateX(0.3rem) rotate(-180deg);
   color: darken($pink, 10%);
-  transform: rotate(-180deg);
   transition: all 0.5s ease;
+}
+.active{
+  background-color: $pastel;
 }
 
 
@@ -55,8 +98,7 @@ button:hover, button:focus, a{
 ------------------------------*/
 #banner{
   position: relative;
-  top: 3.5rem;
-  height: 90vh;
+  height: 100vh;
   background-image: url("../images/cupcakes-sm.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -77,13 +119,30 @@ button:hover, button:focus, a{
   position: relative;
   z-index: 2;
 }
-#banner a{
-  color: darken($pink, 20%);
-  transition: all 0.5s ease;
+
+
+
+#col-swiper{
+  position: relative;
+  height: 100%;
 }
-#banner a:hover{
-  color: rgba(1, 1, 1, 0.5);
-  transition: all 0.5s ease;
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  height: 300px;
+  text-align: center;
+  font-size: 18px;
+  background: $pastel;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: darken($meat, 10%);
 }
 
 
@@ -101,42 +160,32 @@ button:hover, button:focus, a{
 }
 @media screen and (min-width: 1024px){
   //NAVBAR
-  .nav-item a::after{
-    content: " ";
-  }
-  #navbarToggler{
-    justify-content: end;
-  }
-  .navbar-nav{
-    position: absolute;
+  .nav-link::after{
+    content: "";
   }
   .nav-item{
-    height: 4rem;
-    display: flex;
+    height: 2.5rem;
   }
-  .nav-item a{
-    height: 100%;
-    display: flex;
+  .nav-link{
+    height: 4.5rem;
+    top: -1rem;
     align-items: center;
+    display: flex;
+    border-radius: 0;
   }
-  .nav-item a::before{
-    transition: all 0.5s ease;
+  .nav-link:hover{
+    border-radius: 0;
+    border: 0;
   }
-  .nav-item:hover a::before{
-    content: "";
-    position: absolute;
-    z-index: -1;
-    width: 100%;
-    height: 200%;
-    top: -40%;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: $pastel;
-    transition: all 0.5s ease;
+  .navbar-expand-lg .navbar-collapse {
+    display: grid !important;
   }
   //BANNER
   #banner{
     background-image: url("../images/cupcakes-lg.jpg");
+  }
+  //GALERY
+  .swiper-slide{
+    height: 400px;
   }
 }

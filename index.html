@@ -2,7 +2,7 @@
 <html lang="es" dir="ltr">
   <head>
 
-    <title>WEB</title>
+    <title>Página web</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -10,25 +10,33 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="css/all.css">
+    <!-- SWIPER CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="css/style.css">
 
   </head>
   <body>
 
+    <!-- SOCIAL -->
+    <section id="social" class="py-2 px-3 px-lg-5 bg-primary text-right">
+      <a href="#"><i class="fab fa-facebook-square fa-2x px-2"></i></a>
+      <a href="#"><i class="fab fa-instagram-square fa-2x px-2"></i></a>
+    </section>
+
     <!-- NAVBAR -->
-    <nav class="navbar bg-primary navbar-light navbar-expand-lg fixed-top px-lg-5 text-truncate">
+    <nav class="navbar bg-secondary navbar-light navbar-expand-lg px-lg-5 text-truncate fixed-top">
       <button type="button" class="navbar-toggler ml-1 border-0" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toogle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <a class="navbar-brand" href="#home">Nancy</a>
 
-      <div class="collapse navbar-collapse" id="navbarToggler">
+      <div class="collapse navbar-collapse d-lg-grid justify-content-lg-end" id="navbarToggler">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item px-lg-1"> <a class="nav-link py-0" href="#home">Inicio</a> </li>
-          <li class="nav-item px-lg-1"> <a class="nav-link py-0" href="#service">Productos y Servicios</a> </li>
-          <li class="nav-item px-lg-1"> <a class="nav-link py-0" href="#galery">Galeria</a> </li>
-          <li class="nav-item px-lg-1"> <a class="nav-link py-0" href="#about">Sobre mi</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#banner">Inicio</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#service">Productos & Servicios</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#galery">Galeria</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#about">Sobre mi</a> </li>
         </ul>
       </div>
     </nav>
@@ -38,17 +46,129 @@
       <div class="container text-center">
         <h1 class="display-3 font-weight-bold mb-0">Nancy</h1>
         <h2 class="h2">Slogan</h2>
-        <a href="#"><i class="fab fa-facebook-square fa-3x px-2"></i></a>
-        <a href="#"><i class="fab fa-instagram-square fa-3x px-2"></i></a>
       </div>
     </section>
 
+    <!-- PRODUCTS AND SERVICE -->
+    <section id="service" class="py-5">
+      <div class="container">
+        <h2 class="display-4 font-weight-bold mb-0 py-5">Productos & Servicios</h2>
+        <div class="row">
+          <!-- PRODUCT 1 -->
+          <div class="col-12 col-md-6 pb-5">
+            <div class="card">
+              <img src="..." alt="" class="card-img-top p-3 rounded" style="height: 250px;">
+              <div class="card-body">
+                <h3 class="card-text font-weight-bold">Producto 1</h3>
+                <p class="card-text pb-3 border-bottom border-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.<p>
+                <p class="card-text font-weight-bold">Información adicional</p>
+              </div>
+            </div>
+          </div>
+          <!-- PRODUCT 2 -->
+          <div class="col-12 col-md-6 pb-5">
+            <div class="card">
+              <img src="..." alt="" class="card-img-top p-3 rounded" style="height: 250px;">
+              <div class="card-body">
+                <h3 class="card-text font-weight-bold">Producto 2</h3>
+                <p class="card-text pb-3 border-bottom border-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="card-text font-weight-bold">Información adicional</p>
+              </div>
+            </div>
+          </div>
+          <!-- SERVICE 1 -->
+          <div class="col-12 col-md-6 pb-5 pb-md-0">
+            <div class="card">
+              <img src="..." alt="" class="card-img-top p-3 rounded" style="height: 250px;">
+              <div class="card-body">
+                <h3 class="card-text font-weight-bold">Servicio 1</h3>
+                <p class="card-text pb-3 border-bottom border-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="card-text font-weight-bold">Información adicional</p>
+              </div>
+            </div>
+          </div>
+          <!-- SERVICE 2 -->
+          <div class="col-12 col-md-6 pb-5 pb-md-0">
+            <div class="card">
+              <img src="..." alt="" class="card-img-top p-3 rounded" style="height: 250px;">
+              <div class="card-body">
+                <h3 class="card-text font-weight-bold">Servicio 2</h3>
+                <p class="card-text pb-3 border-bottom border-secondary">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p class="card-text font-weight-bold">Información adicional</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GALERY -->
+    <section id="galery" class="py-5">
+      <div class="container pb-5">
+        <h2 class="display-4 font-weight-bold mb-0 py-5">Galeria</h2>
+        <div class="row">
+          <div id="col-swiper" class="col-12 col-md-6">
+
+            <!-- Swiper -->
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">Slide 1</div>
+                <div class="swiper-slide">Slide 2</div>
+                <div class="swiper-slide">Slide 3</div>
+                <div class="swiper-slide">Slide 4</div>
+                <div class="swiper-slide">Slide 5</div>
+                <div class="swiper-slide">Slide 6</div>
+                <div class="swiper-slide">Slide 7</div>
+                <div class="swiper-slide">Slide 8</div>
+                <div class="swiper-slide">Slide 9</div>
+                <div class="swiper-slide">Slide 10</div>
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination"></div>
+            </div>
+
+          </div>
+          <div class="col-12 col-md-6 text-justify align-self-center pt-3 pt-md-0">
+            <h3>Descripcion</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-5">
+      <div class="container pb-5">
+        <h2 class="display-4 font-weight-bold mb-0 py-5">Sobre mi</h2>
+        <div class="row">
+          <div class="col-12 col-md-6 bg-primary p-5 text-justify align-self-center order-2 order-md-1">
+            <p class="h1">Nombre</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <a href="#" class="text-center"><i class="fab fa-facebook-square fa-3x px-2"></i></a>
+            <a href="#" class="text-center"><i class="fab fa-instagram-square fa-3x px-2"></i></a>
+          </div>
+          <div class="col-12 col-md-6 bg-info order-1 order-md-2">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-3 px-5 bg-secondary text-center">
+      <p class="mb-0 px-md-3">Nancy 2020 Copyright © Todos los derechos reservados | Hecho por <a href="danydev.com">danyDEV</a></p>
+    </footer>
+
     <!-- BOOTSTRAP 4 JS -->
-    <script src="js/jquery-3.5.1.slim.min.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <!-- PAGESCROLL2ID -->
     <script src="js/jquery.malihu.PageScroll2id.js"></script>
+    <!-- SWIPER JS -->
+    <script src="js/swiper-bundle.min.js"></script>
+    <!-- CUSTOM JS -->
+    <script src="js/main.js"></script>
 
   </body>
 </html>

@@ -1,60 +1,81 @@
 /*------------------------------
   Ajustes Generales
 ------------------------------*/
+body {
+  font-family: 'Mina', sans-serif; }
+
 .bg-primary {
-  background-color: #fce2ae !important; }
+  background-color: #21243d !important; }
 
 .bg-secondary {
-  background-color: #ffb3b3 !important; }
+  background-color: #ff7c7c !important; }
 
 .bg-info {
-  background-color: #ffdcf7 !important; }
+  background-color: #ffd082 !important; }
 
 .bg-success {
-  background-color: #b6ffea !important; }
+  background-color: #88e1f2 !important; }
 
 .text-primary {
-  color: #fce2ae !important; }
+  color: #21243d !important; }
 
 .text-secondary {
-  color: #ffb3b3 !important; }
+  color: #ff7c7c !important; }
 
 .text-info {
-  color: #ffdcf7 !important; }
+  color: #ffd082 !important; }
 
 .text-success {
-  color: #b6ffea !important; }
+  color: #88e1f2 !important; }
 
 .border-secondary {
-  border-color: #ffb3b3 !important; }
+  border-color: #ffd082 !important; }
 
 .border-success {
-  border-color: #b6ffea !important; }
+  border-color: #88e1f2 !important; }
+
+a:hover {
+  text-decoration: none; }
 
 button:hover, button:focus, a {
   outline: 0; }
 
 *::-moz-selection {
-  background: #ff9a9a;
+  background: #ffc669;
   color: white; }
 
 *::selection {
-  background: #ff9a9a;
+  background: #ffc669;
   color: white; }
 
+/*------------------------------
+  0. SOCIAL
+------------------------------*/
+#social {
+  position: absolute;
+  min-width: 100%;
+  z-index: 2;
+  background-color: transparent; }
+
 #social a {
-  color: #ffb3b3;
+  color: #21243d;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
 #social a:hover {
-  color: #ff8080;
+  color: #b6edf7;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
 /*------------------------------
   1. NAVBAR
 ------------------------------*/
+.navbar {
+  position: absolute;
+  min-width: 100%;
+  top: 3rem;
+  z-index: 5; }
+
 .nav-link {
   position: relative;
   border-radius: 1rem;
@@ -73,21 +94,37 @@ button:hover, button:focus, a {
   transition: all 0.5s ease; }
 
 .nav-link:hover {
-  background-color: #ffc3f1;
-  border: 5px solid #ff8080;
+  background-color: #5ad5ed;
   border-radius: 1rem;
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
-.nav-link:hover::after {
+.active {
+  background-color: #88e1f2;
+  border: 5px solid #21243d; }
+
+.active::after {
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f138";
+  font-size: 1rem;
+  right: 1.5rem;
   -webkit-transform: translateX(0.3rem) rotate(-180deg);
           transform: translateX(0.3rem) rotate(-180deg);
-  color: #ff8080;
-  -webkit-transition: all 0.5s ease;
-  transition: all 0.5s ease; }
+  color: #21243d; }
 
-.active {
-  background-color: #ffdcf7; }
+/*Fixed Header on Scroll CSS*/
+.content {
+  padding: 16px; }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%; }
+
+.sticky + .content {
+  padding-top: 102px; }
 
 /*------------------------------
   2. BANNER
@@ -107,7 +144,7 @@ button:hover, button:focus, a {
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: #fce2ae;
+  background-color: #ffd082;
   opacity: 0.6;
   z-index: 1; }
 
@@ -127,7 +164,7 @@ button:hover, button:focus, a {
   height: 300px;
   text-align: center;
   font-size: 18px;
-  background: #ffdcf7;
+  background: #ff7c7c;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -140,7 +177,23 @@ button:hover, button:focus, a {
 
 .swiper-pagination-bullet-active {
   opacity: 1;
-  background: #fad07d; }
+  background: #0f101c; }
+
+#about a {
+  color: #21243d;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+#about a:hover {
+  color: #b6edf7;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease; }
+
+footer a {
+  color: #88e1f2; }
+
+footer a:hover {
+  color: #2ccae8; }
 
 /*------------------------------
   MEDIA QUERIES
@@ -172,6 +225,9 @@ button:hover, button:focus, a {
 
   .navbar-expand-lg .navbar-collapse {
     display: grid !important; }
+
+  .active {
+    border: 0; }
 
   #banner {
     background-image: url("../images/cupcakes-lg.jpg"); }

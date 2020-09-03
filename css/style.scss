@@ -1,58 +1,73 @@
 /*------------------------------
   Ajustes Generales
 ------------------------------*/
-$blue : #b6ffea;
-$meat : #fce2ae;
-$pink : #ffb3b3;
-$pastel: #ffdcf7;
+$blue : #88e1f2;
+$dark : #21243d;
+$yellow : #ffd082;
+$pink: #ff7c7c;
 
+body{
+  font-family: 'Mina', sans-serif;
+}
 .bg-primary{
-  background-color: $meat !important;
+  background-color: $dark !important;
 }
 .bg-secondary{
   background-color: $pink !important;
 }
 .bg-info{
-  background-color: $pastel !important;
+  background-color: $yellow !important;
 }
 .bg-success{
   background-color: $blue !important;
 }
 .text-primary{
-  color: $meat !important;
+  color: $dark !important;
 }
 .text-secondary{
   color: $pink !important;
 }
 .text-info{
-  color: $pastel !important;
+  color: $yellow !important;
 }
 .text-success{
   color: $blue !important;
 }
 .border-secondary{
-  border-color: $pink !important;
+  border-color: $yellow !important;
 }
 .border-success{
   border-color: $blue !important;
 }
 
+a:hover{
+  text-decoration: none;
+}
 button:hover, button:focus, a{
   outline: 0;
 }
 *::selection{
-  background: darken($pink, 5%);
+  background: darken($yellow, 5%);
   color: white;
 }
 
 
 
+/*------------------------------
+  0. SOCIAL
+------------------------------*/
+#social{
+  position: absolute;
+  min-width: 100%;
+  z-index: 2;
+  background-color: transparent;
+}
 #social a{
-  color: $pink;
+  color: $dark;
   transition: all 0.5s ease;
 }
 #social a:hover{
-  color: darken($pink, 10%);
+  color: lighten($blue, 10%);
   transition: all 0.5s ease;
 }
 
@@ -61,6 +76,12 @@ button:hover, button:focus, a{
 /*------------------------------
   1. NAVBAR
 ------------------------------*/
+.navbar{
+  position: absolute;
+  min-width: 100%;
+  top: 3rem;
+  z-index: 5;
+}
 .nav-link{
   position: relative;
   border-radius: 1rem;
@@ -77,18 +98,36 @@ button:hover, button:focus, a{
   transition: all 0.5s ease;
 }
 .nav-link:hover{
-  background-color: darken($pastel, 5%);
-  border: 5px solid darken($pink, 10%);
+  background-color: darken($blue, 10%);
   border-radius: 1rem;
   transition: all 0.5s ease;
 }
-.nav-link:hover::after{
-  transform: translateX(0.3rem) rotate(-180deg);
-  color: darken($pink, 10%);
-  transition: all 0.5s ease;
-}
 .active{
-  background-color: $pastel;
+  background-color: $blue;
+  border: 5px solid $dark;
+}
+.active::after{
+  position: absolute;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f138";
+  font-size: 1rem;
+  right: 1.5rem;
+  transform: translateX(0.3rem) rotate(-180deg);
+  color: $dark;
+}
+
+/*Fixed Header on Scroll CSS*/
+.content {
+  padding: 16px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .content {
+  padding-top: 102px;
 }
 
 
@@ -111,7 +150,7 @@ button:hover, button:focus, a{
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: $meat;
+  background-color: $yellow;
   opacity: 0.6;
   z-index: 1;
 }
@@ -135,14 +174,34 @@ button:hover, button:focus, a{
   height: 300px;
   text-align: center;
   font-size: 18px;
-  background: $pastel;
+  background: $pink;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .swiper-pagination-bullet-active {
     opacity: 1;
-    background: darken($meat, 10%);
+    background: darken($dark, 10%);
+}
+
+
+
+#about a{
+  color: $dark;
+  transition: all 0.5s ease;
+}
+#about a:hover{
+  color: lighten($blue, 10%);
+  transition: all 0.5s ease;
+}
+
+
+
+footer a{
+  color: $blue;
+}
+footer a:hover{
+  color: darken($blue, 20%);
 }
 
 
@@ -179,6 +238,9 @@ button:hover, button:focus, a{
   }
   .navbar-expand-lg .navbar-collapse {
     display: grid !important;
+  }
+  .active{
+    border: 0;
   }
   //BANNER
   #banner{

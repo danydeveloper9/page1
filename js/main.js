@@ -35,4 +35,21 @@ $(document).ready(function(){
       },
   });
 
+  /* VENOBOX */
+  $('.venobox').venobox({
+      overlayColor: 'rgba(33, 36, 61, 0.85)',
+      arrowsColor: '#ff7c7c',
+      closeBackground: '#ff7c7c',
+      closeColor: '#111111',
+      titleattr: 'title',
+      titleBackground: '#21243d',
+      titlePosition: 'top',
+      numeratio: true,
+      numerationPosition: 'top',
+      numerationBackground: '#21243d',
+      spinner: 'cube-grid',
+      infinigall: true,
+      share: ['facebook', 'twitter'],
+  });
+
 });

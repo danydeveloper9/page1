@@ -41,11 +41,11 @@ button:hover, button:focus, a {
   outline: 0; }
 
 *::-moz-selection {
-  background: #ffc669;
+  background: #71dbef;
   color: white; }
 
 *::selection {
-  background: #ffc669;
+  background: #71dbef;
   color: white; }
 
 /*------------------------------
@@ -74,7 +74,9 @@ button:hover, button:focus, a {
   position: absolute;
   min-width: 100%;
   top: 3rem;
-  z-index: 5; }
+  z-index: 5;
+  -webkit-box-shadow: 0px 10px 26px -5px rgba(0, 0, 0, 0.55);
+          box-shadow: 0px 10px 26px -5px rgba(0, 0, 0, 0.55); }
 
 .nav-link {
   position: relative;
@@ -152,19 +154,30 @@ button:hover, button:focus, a {
   position: relative;
   z-index: 2; }
 
+.card {
+  -webkit-box-shadow: 0px 10px 26px -5px rgba(0, 0, 0, 0.55);
+          box-shadow: 0px 10px 26px -5px rgba(0, 0, 0, 0.55); }
+
+.card-img-top {
+  height: 250px;
+  width: 100%;
+  border-radius: 1.5rem; }
+
 #col-swiper {
   position: relative;
   height: 100%; }
 
 .swiper-container {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  -webkit-box-shadow: 0px 10px 26px -5px rgba(0, 0, 0, 0.55);
+          box-shadow: 0px 10px 26px -5px rgba(0, 0, 0, 0.55); }
 
 .swiper-slide {
   height: 300px;
   text-align: center;
   font-size: 18px;
-  background: #ff7c7c;
+  background: #ff4949;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -189,6 +202,32 @@ button:hover, button:focus, a {
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease; }
 
+#bg-candy {
+  position: relative;
+  background-image: url("../images/mym.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%; }
+
+#bg-candy::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #88e1f2;
+  opacity: 0.6; }
+
+#bg-candy img {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  height: auto;
+  width: auto;
+  -webkit-box-shadow: 0px 10px 26px -5px rgba(0, 0, 0, 0.55);
+          box-shadow: 0px 10px 26px -5px rgba(0, 0, 0, 0.55); }
+
 footer a {
   color: #88e1f2; }
 
@@ -201,7 +240,7 @@ footer a:hover {
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   #banner {
     background-image: url("../images/cupcakes-md.jpg"); } }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 992px) {
   .nav-link::after {
     content: ""; }
 
@@ -227,12 +266,18 @@ footer a:hover {
     display: grid !important; }
 
   .active {
-    border: 0; }
-
+    border: 0; } }
+@media screen and (min-width: 1024px) {
   #banner {
     background-image: url("../images/cupcakes-lg.jpg"); }
 
   .swiper-slide {
-    height: 400px; } }
+    height: 400px; }
+
+  .card-img-top {
+    height: 300px; } }
+@media screen and (min-width: 1200px) {
+  #bg-candy img {
+    max-width: 70%; } }
 
 /*# sourceMappingURL=style.css.map */

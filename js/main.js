@@ -9,6 +9,22 @@ function myFunction() {
     nav.classList.remove("sticky");
   }
 }
+/* SWIPER*/
+var swiper = new Swiper('.swiper-container', {
+  loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  autoplay: {
+    delay: 5000,
+  },
+  keyboard: true,
+});
 $(document).ready(function(){
 
   /* NAVBAR */
@@ -22,19 +38,6 @@ $(document).ready(function(){
       highlightClass: 'active'
   });
 
-  var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      autoplay: {
-        delay: 5000,
-      },
-  });
-
   /* VENOBOX */
   $('.venobox').venobox({
       overlayColor: 'rgba(33, 36, 61, 0.85)',
@@ -44,12 +47,11 @@ $(document).ready(function(){
       titleattr: 'title',
       titleBackground: '#21243d',
       titlePosition: 'top',
-      numeratio: true,
-      numerationPosition: 'top',
-      numerationBackground: '#21243d',
+      // numeratio: true,
+      // numerationPosition: 'top',
+      // numerationBackground: '#21243d',
       spinner: 'cube-grid',
-      infinigall: true,
-      share: ['facebook', 'twitter'],
+      share: ['facebook', 'twitter']
   });
 
 });
